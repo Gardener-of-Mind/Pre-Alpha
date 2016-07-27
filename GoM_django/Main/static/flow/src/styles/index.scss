@@ -1,0 +1,315 @@
+body,
+html {
+  height: initial;
+}
+
+#render {
+  .question {
+    .heading {}
+    .body {
+      .options {}
+    }
+    .footer {}
+  }
+  .condition {
+    .heading {
+      .from-to {
+        input,
+        label {
+          float: left;
+        }
+
+        label {
+          padding-top: 3px;
+          padding-left: 20px;
+        }
+
+        input {
+          margin: 0 10px;
+          width: 50px;
+        }
+      }
+    }
+    .body {}
+  }
+}
+
+// * {
+//   box-sizing: border-box;
+//   font-family: sans-serif;
+//   margin: 0;
+//   padding: 0;
+// }
+
+// html,
+// body {
+//   height: 100%;
+// }
+
+// #flow-box {
+//   display: none;
+//   background-color: #eee;
+//   box-shadow: inset 0 0 10px 0 #555;
+//   cursor: not-allowed;
+//   position: relative;
+// }
+
+// #chart-box {
+//   background: linear-gradient(white -10%, lighten(skyblue, 5%) 30%);
+//   bottom: 0;
+//   overflow: hidden;
+//   position: absolute;
+//   width: 100%;
+
+//   #workspace {
+//     height: 100%;
+//     transition: transform 800ms ease-out;
+
+//     .question {
+//       background:white;
+//       border: 1px solid #aaa;
+//       display: none;
+//       height: 40%;
+//       position: absolute;
+//       top: 40%; left: 50%;
+//       transform: translate(-50%, -50%);
+//       width: 80%;
+
+//       &.active-question {
+//         display: table;
+//       }
+
+//       .question-content {
+//         position: relative;
+
+//          & > div:not(.question-footer) {
+//           padding: 10px;
+//          }
+//         .question-head {
+//           background-color: #eee;
+//           border-bottom: 2px solid #ddd;
+//         }
+//         .question-body {
+//           height: 100%;
+
+//           label {
+//             width: 50%;
+//             float: left;
+//           }
+//         }
+//       }
+
+//       .question-footer {
+//         margin-left: -1px;
+//         margin-top: 1px;
+//         position: absolute;
+//         top: 100%;
+
+//         .path,
+//         .add-condition {
+//           background-color: #ddd;
+//           border: 1px solid #aaa; border-right: none;
+//           cursor: pointer;
+//           float: left;
+//           height: 40px;
+//           line-height: 40px;
+//           text-align: center;
+//           width: 50px;
+
+//           &:last-of-type {
+//             border-right: 1px solid #aaa;
+//           }
+
+//           &:hover {
+//             background-color: #eee;
+//           }
+//         }
+//       }
+
+//       .question-conditions {
+//         height: 50px;
+//         margin-top: 40px;
+//         position: absolute;
+//         top: 100%;
+//         width: 100%;
+
+//         .condition {
+//           display: none;
+//           padding: 10px;
+//           min-height: 50px;
+//           width: 100%;
+//           background-color: #eee;
+//           border: 1px solid #aaa;
+//           position: absolute;
+
+//           &.condition.active {
+//             display: block;
+//           }
+
+//           div.header {
+//             border-radius: 0 0 0 5px;
+//             line-height: 40px;
+//             border-left: 1px solid #aaa;
+//             height: 50px;
+//             position: absolute;
+//             right: 0;
+//             padding: 5px;
+//             top: 0;
+
+//             button {
+//               margin-top: 8px;
+//               margin-left: 5px;
+//             }
+
+//             input {
+//               width: 30px;
+//               text-align: right;
+//             }
+//           }
+
+//           div.data {
+//             width: 75%;
+
+//             div.half {
+//               & > div {
+//                 width: 25%;
+//                 float: left;
+
+//                 label {
+//                   span {
+//                     display: inline-block;
+//                     width: 68px;
+//                   }
+//                 }
+//               }
+//             }
+
+//             #score {
+//               position: relative;
+
+//               input[type="text"] {
+//                 text-align: right;
+//                 width: 30px;
+//               }
+
+//               #help {
+//                 cursor: pointer;
+//                 padding: 5px;
+//                 &:hover {
+//                   background-color: #ddd;
+//                 }
+//               }
+
+//               #english {
+//                 padding: 5px;
+//                 display: none;
+//                 top: 100%;
+//                 position: absolute;
+//                 background-color: #eee;
+//                 border: 3px solid #ddd;
+//               }
+//             }
+//           }
+
+//           button {
+//             background-color: #ddd;
+//             border-radius: 20px;
+//             border: none;
+//             cursor: pointer;
+//             float: right;
+//             height: 20px;
+//             width: 20px;
+
+//             &:hover {
+//               background-color: #ccc;
+//               color: white;
+//             }
+//           }
+
+//           input {
+//             border: 2px solid transparent;
+//             border-radius: 5px;
+//             background-color: transparent;
+//             cursor: pointer;
+//             padding: 5px;
+
+//             &:disabled {
+//               cursor: not-allowed;
+//             }
+
+//             &:hover,
+//             &:focus {
+//               border-color: skyblue;
+//               box-shadow: 0 0 5px skyblue;
+//             }
+
+//             &:focus {
+//               background-color: white;
+//               outline: none;
+//             }
+//           }
+//         }
+//       }
+//     }
+//   }
+
+// }
+
+// #drag-limit {
+//   display: none;
+//   height: 50%;
+//   position: absolute;
+//   top: 25%;
+//   width: 100%;
+
+//   #resize {
+//     z-index: 100;
+//     background-color: #ddd;
+//     color: #888;
+//     cursor: ns-resize;
+//     font-size: 14px;
+//     height: 10px;
+//     line-height: 8px;
+//     text-align: center;
+//     vertical-align: middle;
+//     width: 100%;
+
+//     &:hover {
+//       color: #666;
+//       background-color: #eee;
+//     }
+//   }
+// }
+
+// #load-next,
+// #load-prev {
+//   background-color: transparent;
+//   border: none;
+//   color: #aaa;
+//   cursor: pointer;
+//   font-size: 32px;
+//   height: 100%;
+//   position: absolute;
+//   width: 50px;
+
+//   &:focus {
+//     outline: none;
+//   }
+
+//   &:hover {
+//     color: black;
+//   }
+// }
+
+// #load-next {
+//   right: 0;
+// }
+
+// #load-prev {
+//   left: 0;
+// }
+
+// #submit {
+//   display: table;
+//   margin: auto;
+// }

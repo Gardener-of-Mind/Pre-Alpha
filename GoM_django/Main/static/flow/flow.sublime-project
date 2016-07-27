@@ -1,0 +1,20 @@
+{
+  "settings": {
+    "color_scheme": "Packages/User/SublimeLinter/Oceanic Next (SL).tmTheme",
+    "default_line_ending": "unix",
+    "ensure_newline_at_eof_on_save": true,
+    "highlight_line": true,
+    "rulers": [80],
+    "tab_size": 2,
+    "translate_tabs_to_spaces": true,
+    "trim_trailing_white_space_on_save": true,
+    "word_wrap": false
+  },
+  "folders": [
+    {
+      "file_exclude_patterns": ["build/bundle.*", "build/*.js"],
+      "folder_exclude_patterns": ["node_modules"],
+      "path": "."
+    }
+  ]
+}

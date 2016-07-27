@@ -1,0 +1,7 @@
+Django==1.8.13
+django-admin-bootstrapped==2.5.7
+django-bootstrap3==7.0.1
+django-grappelli==2.8.1
+mongoengine==0.10.6
+Pillow==3.3.0
+pymongo==3.2.2

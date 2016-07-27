@@ -1,0 +1,23 @@
+.logo-default {
+	margin: 2px 4px 2px 4px !important;
+	height: 36px;
+}
+
+.portlet-fullscreen .slimScrollDiv{
+	height: calc(100% - 20px) !important;
+}
+.portlet-fullscreen .scroller{
+	height: 100% !important;
+}
+
+.mt-action-buttons {
+	width: 165px !important;
+}
+.mt-action-row{
+	margin-bottom: 2px !important;
+}
+
+.mt-actions .mt-action .mt-action-img>img {
+	height: 40px;
+	width: 40px;
+}

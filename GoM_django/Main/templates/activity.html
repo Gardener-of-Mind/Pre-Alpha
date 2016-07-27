@@ -1,0 +1,192 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Initial Survey</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- StyleSheets -->
+    <link href="{% static 'assets/global/plugins/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css" />
+    <link href="{% static 'assets/global/plugins/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet" type="text/css" />
+    <link href="{% static 'assets/pages/css/initial-survey.css' %}" rel="stylesheet" type="text/css" />
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="{% static 'assets/global/img/favicon.ico' %}" /> </head>
+
+    <style type="text/css">
+      iframe {
+        display: table;
+        margin: auto;
+      }
+    </style>
+</head>
+<body>
+	<!-- Navigation -->
+
+    <div class="header">
+        <img src="{% static 'assets/pages/img/logo.png' %}"  class="logo" alt="" />
+    </div>
+	<!-- Navigation End-->
+  <!-- Page Content -->
+    <div class="container body-box">
+        <!-- survey type start -->
+<!--         <div class="row white-bg survey-type">
+        	<div class="col-sm-4  text-center">
+        		<button class="survey-type-btn" data-type="anxiety" data-sid="{{oid}}">Anxiety</button>
+        	</div>
+        	<div class="col-sm-4  text-center">
+        		<button class="survey-type-btn" data-type="depression" >Depression</button>
+        	</div>
+        	<div class="col-sm-4  text-center">
+        		<button class="survey-type-btn" data-type="stress" >Stress</button>
+        	</div>
+        </div>
+ -->        <!-- survey type end -->
+
+        <!-- survey fields start -->
+        <div class="row white-bg survey-form">
+        	<div class="ques-cont">
+	            <div class="col-sm-12 ques">
+	            </div>
+	            <div class="col-sm-12 options-cont">
+		            <!-- <div class="col-sm-12 mcq-type option-type" data-option-type="checkbox">
+			            <div class="col-sm-6">
+			                <label>
+			                <div class="mcq">
+		                        <input type="checkbox" name="checkbox-type" value="">Option A
+		                    </div>
+		                    </label>
+			            </div>
+			            <div class="col-sm-6">
+			                <label><div class="mcq">
+		                        <input type="checkbox" name="checkbox-type" value="">Option B
+		                    </div></label>
+			            </div>
+			            <div class="col-sm-6">
+			                <label><div class="mcq">
+		                        <input type="checkbox" name="checkbox-type" value="">Option C
+		                    </div></label>
+			            </div>
+			            <div class="col-sm-6">
+			                <label><div class="mcq">
+		                        <input type="checkbox" name="checkbox-type" value="">Option D
+		                    </div></label>
+			            </div>
+		            </div>
+		            <div class="col-sm-12 slider-type option-type" data-option-type="rating">
+			            <div class="slider">
+							<div id="demo-simple-slider" class="dragdealer">
+							  <div class="handle green-circle">
+							  	<div class="icon"></div>
+							  </div>
+							</div>
+							<table class="scale">
+								<tr>
+									<td>1</td>
+									<td>2</td>
+									<td>3</td>
+									<td>4</td>
+									<td>5</td>
+									<td>6</td>
+									<td>7</td>
+									<td>8</td>
+									<td>9</td>
+									<td>10</td>
+								</tr>
+							</table>
+						</div>
+					</div>
+					<div class="col-sm-12 yes-no-type option-type" data-option-type="dual">
+						<div class="yes-no">
+							<span class="yes-no-ques">Choose between the two options.</span>
+							<span class="yes-no-option yes-no-cross"><i class="fa fa-close"></i><span class="yes-no-tag">NO</span></span>
+							<span class="yes-no-option yes-no-tick"><i class="fa fa-check"></i><span class="yes-no-tag">YES</span></span>
+						</div>
+					</div>
+					<div class="col-sm-12 main radio-type option-type " data-option-type="radio">
+						<div class="col-sm-6">
+							<div class="radioholder">
+							<input type="radio" name="radio-type" value="" required>
+							<label for="pt_website">Website</label>
+							</div>
+						</div>
+						<div class="col-sm-6">
+							<div class="radioholder">
+							<input type="radio" name="radio-type" value="">
+							<label for="pt_mobile">Mobile</label>
+							</div>
+						</div>
+						<div class="col-sm-6">
+							<div class="radioholder">
+							<input type="radio" name="radio-type" value="">
+							<label for="pt_application">Application</label>
+							</div>
+						</div>
+						<div class="col-sm-6">
+							<div class="radioholder">
+							<input type="radio" name="radio-type" value="">
+							<label for="pt_illustration">Illustration</label>
+							</div>
+						</div>
+
+						</form>
+					</div>
+					<div class="col-sm-12 select-type option-type" style="z-index: 1;" data-option-type="dropdownbox">
+						<form class="options" data-form-type="dropdownbox">
+							<div class="selectholder">
+								<label>CHOOSE SOME OPTION</label>
+								<select required>
+								  <option value="0">Some Option </option>
+								  <option value="1">Some Option 1</option>
+								  <option value="2">Some Option 2</option>
+								  <option value="3">Some Option 3</option>
+								  <option value="4">Some Option 4</option>
+								  <option value="5">Some Option 5</option>
+								</select>
+							</div>
+							<div class="col-sm-12 text-center">
+								<button type="submit" class="next-ques">NEXT QUESTION</button>
+							</div>
+						</form>
+					</div>
+					<div class="col-sm-12 text-type option-type" data-option-type="text">
+						<textarea class="survey-textarea" placeholder="Just to give us a flavour...">
+						</textarea>
+					</div> -->
+				</div>
+				<div class="col-sm-12 text-center">
+					<div class="next-ques">NEXT ACTIVITY</div>
+				</div>
+            </div>
+
+
+        </div>
+        <!-- survey fields end -->
+
+        <!-- Footer -->
+        <footer>
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <p>Copyright &copy; 2016 ManaMaali</p>
+                </div>
+            </div>
+            <!-- /.row -->
+        </footer>
+    </div>
+    <!-- /.container -->
+
+    <!-- BEGIN CORE PLUGINS -->
+    <script src="{% static 'assets/global/plugins/jquery.min.js' %}" type="text/javascript"></script>
+    <!-- Dragdealer JavaScript -->
+    <script src="{% static 'assets/global/plugins/dragdealer.min.js' %}"></script>
+    <!-- END CORE PLUGINS -->
+
+    <!-- BEGIN PAGE LEVEL SCRIPTS -->
+    <script src="{% static 'assets/pages/scripts/activity.js' %}" type="text/javascript"></script>
+    <!-- END PAGE LEVEL SCRIPTS -->
+</body>
+</html>

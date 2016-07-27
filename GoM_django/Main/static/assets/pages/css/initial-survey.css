@@ -1,0 +1,796 @@
+body {
+	background: #eee;
+	font-size: 16px;
+}
+
+*, *:before, *:after {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+/* Header Styling */
+.header {
+	position: fixed;
+	top:0;
+	left: 0;
+	height: 80px;
+	width: 100%;
+	padding: 10px 20px;
+	border-bottom: 10px solid #3F5A6C;
+    text-align: center;
+    background: #25BDA8;
+    z-index: 50;
+}
+
+.header .logo {
+	height: 50px;
+	max-width: 100%;
+}
+
+
+
+/* white-container */
+.container.body-box {
+	opacity: 0;
+	padding-top: 240px;
+	-webkit-transition: all 0.3s ease-in;
+	-moz-transition: all 0.3s ease-in;
+	transition: all 0.3s ease-in;
+	margin-top: 40px;
+}
+
+.white-bg {
+	max-width: 900px;
+	background: white;
+    margin: 20px auto;
+    padding: 20px 50px;
+}
+
+
+/*Survey Type*/
+.survey-type {
+	display: block;
+}
+
+/*Survey Form*/
+.survey-form {
+	display: none;
+}
+
+/*Survey button*/
+.survey-type-btn {
+    width: 200px;
+    height: 200px;
+    border-radius: 100%;
+    border: none;
+    font-size: 2em;
+    margin: 25px;
+    outline: none;
+    box-shadow: 0 0 10px -1px #333;
+}
+
+
+/*Progress Bar*/
+.progress-back {
+  background-color: #ccc;
+  height: 3px;
+  width: 100%;
+  margin: auto;
+  position: relative;
+}
+
+.progress-front {
+  /*background: -webkit-gradient(linear, left top, right top, color-stop(0%,#87d4d7), color-stop(100%,#8bfbff));*/
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%,#39A9A4), color-stop(100%,#25BDA8));
+  height: 2px;
+  width: 0%;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+.progress-data {
+	color: #666;
+	font-size: 1em;
+	font-style: italic;
+	padding: 2px;
+}
+
+/* MCQ - Checkbox */
+
+.mcq {
+	text-align: center;
+    font-size: 1.2em;
+    padding: 15px 20px;
+    margin: 10px 0;
+    border: 2px solid #eee;
+    background: #eee;
+    border-radius: 2px;
+    cursor: pointer;
+    -webkit-transition: all 0.2s ease-in;
+    -moz-transition: all 0.2s ease-in;
+    transition: all 0.2s ease-in;
+}
+.mcq:hover{
+    background: #f0f0f0;
+    border: 2px solid #38c0cb;
+}
+.mcq.selected {
+	background: #25BDA8;
+    color: #f0f0f0;
+    border: 2px solid #2A817C;
+}
+
+.mcq-type label{
+	display: block;
+}
+.mcq input[type="checkbox"] {
+	display: none;
+}
+
+/*Yes-No Fields*/
+.yes-no {
+	overflow: hidden;
+	border-radius: 2px;
+	font-size: 1.3em;
+	background: #eee;
+	height: 50px;
+	margin: 0.5em 0;
+}
+
+.yes-no-ques {
+	line-height: 30px;
+	padding: 10px 20px;
+	float: left;
+	max-width: calc(100% - 100px);
+	overflow: hidden;
+}
+.yes-no-option {
+	float: right;
+	color: #fff;
+    height: 50px;
+    width: 100px;
+    font-size: 1.3em;
+    line-height: 50px;
+    text-align: center;
+    cursor: pointer;
+    padding: 0 5px;
+}
+.yes-no-option.inactive {opacity: 0.5;}
+.yes-no-tag {
+	padding: 0 4px;
+
+}
+@media screen and (max-width: 750px) {
+    .yes-no-tag{display: none;}
+    .yes-no-option{width: 50px;}
+}
+.yes-no-tick {background: #15BB65; }
+.yes-no-tick.active {background: #03B358; }
+
+.yes-no-cross {background: #EA8586; }
+.yes-no-cross.active {background: #E65051; }
+
+/* Radio CSS */
+
+.main {
+  padding: 2em 0;
+  z-index: 1;
+}
+
+h1 {
+  text-align: center;
+  margin: 0 0 1.2em 0;
+  line-height: 150%;
+}
+
+p {
+  margin-top: 2em;
+  line-height: 150%;
+  text-align: center;
+}
+
+a {
+  color: #2A817C;
+}
+
+a:active,
+a:focus,
+a:hover {
+  color: #E87A31;
+}
+
+.radioholder {
+	width: 100%;
+	background: #eee;
+	margin-bottom: 1em;
+	font-size: 1.3em;
+	height: 2.4em;
+	color: #666;
+	-o-transition: .1s ease-out;
+	-ms-transition: .1s ease-out;
+	-moz-transition: .1s ease-out;
+	-webkit-transition: .1s ease-out;
+	transition: .1s ease-out;
+	cursor: pointer;
+}
+
+
+.activeradioholder {
+	background: #39A9A4;
+	color: #fff;
+}
+
+.radioholder .desc {
+	display: inline-block;
+	vertical-align: middle;
+	padding-left: .6em;
+	line-height: 2.4em;
+}
+
+.radioholder .tick {
+	display: inline-block;
+	vertical-align: middle;
+	width: 2.4em;
+	height: 100%;
+	background-color: #ddd;
+	background-image: none;
+	-o-transition: .1s ease-out;
+	-ms-transition: .1s ease-out;
+	-moz-transition: .1s ease-out;
+	-webkit-transition: .1s ease-out;
+	transition: .1s ease-out;
+}
+
+.activeradioholder .tick {
+	background-color: #2A817C;
+	background-image: url('http://supereightstudio.com/img/radio_tick.png');
+	background-size: cover;
+}
+
+.radioholder:hover {
+	background-color: #ddd;
+}
+
+.radioholder:hover .tick {
+	background-color: #ccc;
+}
+
+.activeradioholder:hover {
+	background-color: #39A9A4;
+}
+
+.activeradioholder:hover .tick {
+	background-color: #2A817C;
+}
+
+
+/*Select box CSS*/
+.selectholder {
+  clear: both;
+	width: 100%;
+	background: #eee;
+	margin-bottom: 1em;
+	font-size: 1.3em;
+	height: 2.4em;
+	color: #666;
+	-o-transition: .1s ease-out;
+	-ms-transition: .1s ease-out;
+	-moz-transition: .1s ease-out;
+	-webkit-transition: .1s ease-out;
+	transition: .1s ease-out;
+	cursor: pointer;
+}
+
+.selectholder .desc {
+	display: inline-block;
+	vertical-align: middle;
+	padding-left: .8em;
+	line-height: 2.4em;
+}
+
+.selectholder .pulldown {
+	float: right;
+	vertical-align: middle;
+	width: 2.4em;
+	height: 100%;
+	background-color: #ddd;
+	background-image: url('http://supereightstudio.com/img/pulldown.png');
+	background-size: cover;
+	-o-transition: .1s ease-out;
+	-ms-transition: .1s ease-out;
+	-moz-transition: .1s ease-out;
+	-webkit-transition: .1s ease-out;
+	transition: .1s ease-out;
+}
+
+.selectholder:hover,
+.activeselectholder {
+	background-color: #ddd;
+}
+
+.selectholder:hover .pulldown,
+.activeselectholder .pulldown {
+	background-color: #39A9A4;
+	background-image: url('http://supereightstudio.com/img/pulldown_hover.png');
+}
+
+.selectholder .selectdropdown {
+	position: relative;
+	top: 0;
+	left: 0;
+	background: #39A9A4;
+	color: #fff;
+	display: none;
+	clear: both;
+}
+
+.selectholder .selectdropdown span {
+	display: block;
+	border-bottom: solid 1px #3F5A6C;
+	padding-left: .8em;
+	line-height: 2.4em;
+	width: 100%;
+	-o-transition: background-color .1s ease-out;
+	-ms-transition: background-color .1s ease-out;
+	-moz-transition: background-color .1s ease-out;
+	-webkit-transition: background-color .1s ease-out;
+	transition: background-color .1s ease-out;
+}
+
+.selectholder .selectdropdown span:last-child {
+	border-bottom: none;
+}
+
+.selectholder .selectdropdown span.active {
+	background-color: #3F5A6C;
+	background-image: url('http://supereightstudio.com/img/radio_tick.png');
+	background-repeat: no-repeat;
+	background-size: 1.6em 1.6em;
+	background-position: 98% 50%;
+}
+
+.selectholder .selectdropdown span:hover {
+	background-color: #25BDA8;
+}
+
+/*Text-area*/
+.survey-textarea {	
+	height: 15em;
+    border: 1px solid #eee;
+    padding: 1em;
+    font-size: 1.2em;
+    background: #eee;
+    width: 100%;
+    outline: none;
+    -webkit-appearance: none;
+    -o-transition: .1s ease-out;
+    -ms-transition: .1s ease-out;
+    -moz-transition: .1s ease-out;
+    -webkit-transition: .1s ease-out;
+    transition: .1s ease-out;
+}
+
+.survey-textarea:focus{
+    border: 1px solid #39A9A4;
+    background: #e0e0e0;
+}
+
+
+/*Progress Bar*/
+
+.seconds {
+  background-color: #ccc;
+  height: 3px;
+  width: 100%;
+  margin: auto;
+  position: relative;
+}
+
+.bar {
+  /*background: -webkit-gradient(linear, left top, right top, color-stop(0%,#87d4d7), color-stop(100%,#8bfbff));*/
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%,#39A9A4), color-stop(100%,#25BDA8));
+  height: 2px;
+  width: 0%;
+}
+
+
+
+.progress-data {
+	color: #666;
+	font-size: 1em;
+	font-style: italic;
+	padding: 2px;
+}
+
+
+.next-ques {
+	min-width: 250px;
+	max-width: 400px;
+	margin: 1em 0;
+	padding: 10px 20px;
+	background-color: #E34D3A;
+	color: #fff;
+	border-radius:3px;
+	display: inline-block;
+	-webkit-transition: all 0.2s ease-in;
+	-moz-transition: all 0.2s ease-in;
+	transition: all 0.2s ease-in;
+}
+.next-ques:hover {
+	background-color: #B71C1C;
+}
+
+
+.form-done {
+	padding: 2em;
+}
+
+/*MCQ*/
+.mcq {
+	text-align: center;
+    font-size: 1.2em;
+    padding: 15px 20px;
+    margin: 10px 0;
+    border: 2px solid #eee;
+    background: #eee;
+    border-radius: 2px;
+    cursor: pointer;
+    -webkit-transition: all 0.2s ease-in;
+    -moz-transition: all 0.2s ease-in;
+    transition: all 0.2s ease-in;
+}
+.mcq:hover{
+    background: #f0f0f0;
+    border: 2px solid #38c0cb;
+
+}
+.mcq.selected {
+	background: #25BDA8;
+    color: #f0f0f0;
+    border: 2px solid #2A817C;
+}
+.ques {
+	font-size: 1.5em;
+	margin: 30px 15px;
+	text-align: justify;
+}
+.navbar-brand {
+  transform: translateX(-50%);
+  left: 50%;
+  position: absolute;
+}
+.nav-back {
+	background: #fff;
+}
+
+/*RATING*/
+@import url(http://fonts.googleapis.com/css?family=Lato);
+
+body
+{
+    font-family: 'Lato', Arial, sans-serif;
+    /*font-size: 30px;*/
+
+    color: #414042;
+    /*background: #25bda8;*/
+}
+
+*, *:before, *:after
+{
+    box-sizing: border-box;
+}
+
+p
+{
+    text-align: center;
+}
+
+.widget
+{
+    z-index: 3;
+
+    width: 600px;
+    margin: 100px auto 0;
+    padding: 50px 30px 70px;
+
+    -webkit-transition: all .4s cubic-bezier(.68, -.55, .265, 1.55);
+
+    transition: all .4s cubic-bezier(.68, -.55, .265, 1.55);
+    -webkit-transform: translateY(500px);
+            transform: translateY(500px);
+
+    border-radius: 16px 16px  0 0;
+    background: #f1fbf9;
+}
+
+.widget.active
+{
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+}
+
+.widget:after
+{
+    display: block;
+    clear: both;
+
+    content: '';
+}
+
+.slider
+{
+    margin: 0 auto;
+    max-width: 700px;
+}
+
+.dragdealer
+{
+    margin: 110px 8px 0;
+
+    border-radius: 15px;
+    background: #e9e9ea;
+}
+
+.dragdealer .green-circle
+{
+    line-height: 30px;
+
+    position: relative;
+    z-index: 8;
+
+    width: 30px;
+    height: 30px;
+
+    text-align: center;
+
+    background: #fff;
+}
+
+.dragdealer .green-circle:after
+{
+    position: absolute;
+    top: -8px;
+    left: -8px;
+
+    width: 46px;
+    height: 46px;
+
+    content: '';
+    -webkit-transition: all .1s;
+    transition: all .1s;
+
+    border: 8px solid #25bda8;
+    border-radius: 50%;
+    background: #fff;
+    box-shadow: 0 8px 6px -6px rgba(0,0,0,.3);
+}
+
+.dragdealer.active .green-circle:after
+{
+    position: absolute;
+    top: -10px;
+    left: -10px;
+
+    width: 50px;
+    height: 50px;
+
+    content: '';
+
+    border: 14px solid #25bda8;
+    border-radius: 50%;
+    background: #a6e4db;
+    box-shadow: 0 8px 6px -6px rgba(0,0,0,.3);
+}
+
+@-webkit-keyframes iconIn
+{
+    0%
+    {
+        -webkit-transform: translateY(40px) scale(0);
+                transform: translateY(40px) scale(0);
+    }
+    70%
+    {
+        -webkit-transform: translateY(-10px) scale(1.3);
+                transform: translateY(-10px) scale(1.3);;
+    }
+    100%
+    {
+        -webkit-transform: translateY(0px) scale(1);
+                transform: translateY(0px) scale(1);;
+    }
+}
+
+@keyframes iconIn
+{
+    0%
+    {
+        -webkit-transform: translateY(40px) scale(0);
+                transform: translateY(40px) scale(0);
+    }
+    70%
+    {
+        -webkit-transform: translateY(-10px) scale(1.3);
+                transform: translateY(-10px) scale(1.3);;
+    }
+    100%
+    {
+        -webkit-transform: translateY(0px) scale(1);
+                transform: translateY(0px) scale(1);;
+    }
+}
+
+
+
+@-webkit-keyframes iconOut
+{
+    0%
+    {
+        -webkit-transform: translateY(0px) scale(1);
+                transform: translateY(0px) scale(1);
+    }
+    100%
+    {
+        -webkit-transform: translateY(50px) scale(0);
+                transform: translateY(50px) scale(0);
+    }
+}
+
+
+
+@keyframes iconOut
+{
+    0%
+    {
+        -webkit-transform: translateY(0px) scale(1);
+                transform: translateY(0px) scale(1);
+    }
+    100%
+    {
+        -webkit-transform: translateY(50px) scale(0);
+                transform: translateY(50px) scale(0);
+    }
+}
+
+.dragdealer .green-circle .icon
+{
+    position: absolute;
+    top: -100px;
+    left: -22px;
+
+    width: 75px;
+    height: 75px;
+
+    -webkit-transform: scale(0);
+
+            transform: scale(0);
+    -webkit-animation: iconOut .3s 1.3s backwards;
+            animation: iconOut .3s 1.3s backwards;
+    -webkit-animation-delay: 1s;
+            animation-delay: 1s;
+
+    color: white;
+    border-radius: 50%;
+    background: #25bda8;
+    background-image: url(http://321zeno.com/misc/rating/faces.jpg);
+    background-position-x: -.5px;
+    background-position-y: 0;
+}
+
+.dragdealer.active .green-circle .icon
+{
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    -webkit-transform: translateY(0px) scale(1);
+            transform: translateY(0px) scale(1);
+    -webkit-animation: iconIn .3s forwards;
+            animation: iconIn .3s forwards;
+}
+
+.dragdealer .green-circle .icon:after
+{
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+
+    width: 0;
+    height: 0;
+    margin-left: -10px;
+
+    content: '';
+
+    border-width: 15px 10px 0 10px;
+    border-style: solid;
+    border-color: #25bda8 transparent transparent transparent;
+}
+
+.scale
+{
+    width: 100%;
+    margin-top: 20px;
+}
+
+.scale td
+{
+    position: relative;
+
+    width: 10%;
+
+    text-align: center;
+}
+
+.scale td:after
+{
+    position: absolute;
+    z-index: 5;
+    top: -40px;
+    left: 50%;
+
+    width: 10px;
+    height: 10px;
+    margin-left: -6px;
+
+    content: '';
+
+    border-radius: 50%;
+    background-color: #bcbec0;
+}
+
+/*button
+{
+    font-size: 26px;
+    font-weight: normal;
+
+    float: right;
+
+    margin-top: 20px;
+    padding: 20px 25px;
+
+    color: white;
+    border: 0;
+    border-radius: 6px;
+    background-color: #4a70ad;
+}*/
+
+.base
+{
+    position: relative;
+    top: -40px;
+
+    width: 800px;
+    margin: 0 auto;
+}
+
+.base--top
+{
+    height: 8px;
+
+    border-radius: 0 0 8px 8px ;
+    background: #20ab98;
+}
+.base--top:before
+{
+    position: relative;
+    z-index: -5;
+    top: -8px;
+
+    display: block;
+
+    height: 8px;
+
+    content: '';
+
+    border-radius: 8px 8px 0 0;
+    background: #20ab98;
+}
+
+.base--bottom
+{
+    z-index: 13;
+
+    height: 700px;
+
+    background: #25bda8;
+}

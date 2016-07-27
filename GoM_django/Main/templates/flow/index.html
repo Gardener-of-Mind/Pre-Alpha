@@ -1,0 +1,153 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title>ManaMaali - Form Flow</title>
+  <!-- Bootstrap Core CSS -->
+  <link href="{% static 'assets/global/plugins/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <!-- KAdmin CSS -->
+  <link href="{% static 'flow/build/kadmin.css' %}" rel="stylesheet">
+  <!-- Custom CSS -->
+  <link href="{% static 'flow/build/bundle.css' %}" rel="stylesheet">
+  <!-- Custom Fonts -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+  <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="page-wrapper">
+      <div class="page-content">
+        <div class="row">
+          <div class="tab-general">
+            <div id="chart-box" class="col-md-12">
+              <div class="row">
+                <div class="col-md-5 col-md-offset-1" style="padding-right:0;">
+                  <button class="btn btn-block" id="load-prev"><</button>
+                </div>
+
+                <div class="col-md-5" style="padding-left:0">
+                  <button class="btn btn-block" id="load-next">></button>
+                </div>
+
+                <div class="col-md-10 col-md-offset-1" id="render">
+                  <div class="panel question">
+                    <div class="panel-heading heading">
+                    </div><!-- end: question-heading -->
+
+                    <div class="panel-body body">
+                      <p></p>
+                      <div class="options">
+                      </div><!-- end: question-options -->
+                    </div><!-- end: question-body -->
+
+                    <div class="panel-footer footer">
+                      <button class="add-condition btn">&plus;</button>
+                      <span></span>
+                    </div><!-- end: question-footer -->
+                  </div><!-- end: question -->
+
+                  <div class="panel condition">
+                    <div class="panel-heading heading">
+                      <span class="col-md-2 col-sm-3 col-xs-4" id="idx"></span>
+
+                      <div class="col-md-4 col-sm-5 from-to">
+                        <label for="from" class="control-label">From:</label>
+                        <input type="text" class="form-control" id="from" name="from" disabled>
+                        <label for="to" class="control-label">To:</label>
+                        <input type="text" class="form-control" id="to" name="to" placeholder="Next question">
+                      </div>
+
+                      <div class="col-sm-1 pull-right text-right" id="close">
+                        <button class="btn" id="close">&times;</button>
+                      </div>
+
+                      <div style="clear:both"></div>
+                    </div><!-- end: condition-heading -->
+
+                    <div class="panel-body body">
+                      <div class="form-horizontal">
+                        <div class="form-body data"></div>
+                      </div>
+
+                      <div style="clear:both"></div>
+
+                      <!-- <div class="form-horizontal">
+                        <div class="form-body" style="position:relative;">
+                          <div class="col-md-10 well">
+                            <label class="col-md-2 control-label">Score:</label>
+
+                            <div class="col-md-3">
+                              <select class="form-control operator">
+                                <option value="lt">lesser than</option>
+                                <option value="gt">greater than</option>
+                                <option value="eq">equal to</option>
+                              </select>
+                            </div>
+
+                            <div class="col-md-2">
+                              <input type="text" class="form-control value" value="0">
+                            </div>
+
+                            <div class="col-md-1">
+                              <label class="checkbox-inline">
+                                <input type="checkbox" name="">
+                                Not
+                              </label>
+                            </div>
+
+                            <button class="btn">+</button>
+                          </div>
+
+                          <div style="position:absolute;bottom:0;box-sizing:border-box;margin-top:6px;width:100%">
+                            <button class="btn">+</button>
+                          </div>
+
+                          <div style="clear:both"></div>
+                        </div>
+                      </div> -->
+                    </div><!-- end condition-body -->
+                  </div><!-- end: condition -->
+                </div>
+              </div><!-- end: .row -->
+              <div class="row">
+                <div class="col-md-10 col-md-offset-1">
+                  <button class="btn btn-block btn-primary" id="submit">SUBMIT</button>
+                </div>
+              </div>
+            </div><!-- end: #chart-box -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- jQuery -->
+  <script src="{% static 'assets/global/plugins/jquery.min.js' %}"></script>
+  <script src="{% static 'flow/build/jquery-ui.js' %}"></script>
+  <!-- Bootstrap Core JavaScript -->
+  <script src="{% static 'assets/global/plugins/bootstrap/js/bootstrap.min.js' %}"></script>
+  <!-- flow JavaScript -->
+  <script src="{% static 'flow/build/bundle.js' %}"></script>
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('#help').tooltip();
+    });
+  </script>
+  <!-- Plugin JavaScript -->
+  <script src="{% static 'assets/global/plugins/jquery.easing.min.js' %}"></script>
+  <!-- <script src="{% static 'assets/global/plugins/classie.js' %}"></script> -->
+  <!-- <script src="{% static 'assets/global/plugins/cbpAnimatedHeader.min.js' %}"></script> -->
+  <!-- Contact Form JavaScript -->
+  <!-- <script src="{% static 'assets/global/plugins/jqBootstrapValidation.js' %}"></script> -->
+  <!-- <script src="{% static 'assets/pages/js/index-form.js' %}"></script> -->
+  <!-- Custom Theme JavaScript -->
+  <!-- <script src="{% static 'assets/pages/js/index-theme.js' %}"></script> -->
+</body>
+</html>

@@ -1,0 +1,494 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+    <!--<![endif]-->
+    <!-- BEGIN HEAD -->
+
+    <head>
+        <meta charset="utf-8" />
+        <title>ManaMaali | Dashboard</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta content="width=device-width, initial-scale=1" name="viewport" />
+        <meta content="" name="description" />
+        <meta content="" name="author" />
+        <!-- BEGIN GLOBAL MANDATORY STYLES -->
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet" type="text/css" />
+        <link href="{% static 'assets/global/plugins/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css" />
+        <link href="{% static 'assets/global/plugins/simple-line-icons/simple-line-icons.min.css' %}" rel="stylesheet" type="text/css" />
+        <link href="{% static 'assets/global/plugins/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet" type="text/css" />
+        <link href="{% static 'assets/global/plugins/uniform/css/uniform.default.css' %}" rel="stylesheet" type="text/css" />
+        <link href="{% static 'assets/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css' %}" rel="stylesheet" type="text/css" />
+        <!-- END GLOBAL MANDATORY STYLES -->
+        <!-- BEGIN PAGE LEVEL PLUGINS -->
+        <link href="{% static 'assets/global/plugins/bootstrap-daterangepicker/daterangepicker.min.css' %}" rel="stylesheet" type="text/css" />
+        <link href="{% static 'assets/global/plugins/morris/morris.css' %}" rel="stylesheet" type="text/css" />
+        <link href="{% static 'assets/global/plugins/fullcalendar/fullcalendar.min.css' %}" rel="stylesheet" type="text/css" />
+        <link href="{% static 'assets/global/plugins/jqvmap/jqvmap/jqvmap.css' %}" rel="stylesheet" type="text/css" />
+        <!-- END PAGE LEVEL PLUGINS -->
+        <!-- BEGIN THEME GLOBAL STYLES -->
+        <link href="{% static 'assets/global/css/components-md.min.css' %}" rel="stylesheet" id="style_components" type="text/css" />
+        <link href="{% static 'assets/global/css/plugins-md.min.css' %}" rel="stylesheet" type="text/css" />
+        <!-- END THEME GLOBAL STYLES -->
+
+        <!-- BEGIN THEME LAYOUT STYLES -->
+        <link href="{% static 'assets/pages/css/profile.min.css' %}" rel="stylesheet" type="text/css" />
+        <link href="{% static 'assets/layouts/layout/css/layout.min.css' %}" rel="stylesheet" type="text/css" />
+        <link href="{% static 'assets/layouts/layout/css/themes/darkblue.min.css' %}" rel="stylesheet" type="text/css" id="style_color" />
+        <link href="{% static 'assets/layouts/layout/css/custom.css' %}" rel="stylesheet" type="text/css" />
+        <!-- END THEME LAYOUT STYLES -->
+        <link rel="shortcut icon" href="{% static 'assets/global/img/favicon.ico' %}" />  </head>
+    <!-- END HEAD -->
+
+    <body class="page-header-fixed page-sidebar-closed-hide-logo page-content-white page-md page-sidebar-fixed">
+        <!-- BEGIN HEADER -->
+        <div class="page-header navbar navbar-fixed-top">
+            <!-- BEGIN HEADER INNER -->
+            <div class="page-header-inner ">
+                <!-- BEGIN LOGO -->
+                <div class="page-logo">
+                    <a href="index.html">
+                        <img src="{% static 'assets/layouts/layout/img/logo.png' %}" alt="logo" class="logo-default logo-nav" /> </a>
+                    <div class="menu-toggler sidebar-toggler"> </div>
+                </div>
+                <!-- END LOGO -->
+                <!-- BEGIN RESPONSIVE MENU TOGGLER -->
+                <a href="javascript:;" class="menu-toggler responsive-toggler" data-toggle="collapse" data-target=".navbar-collapse"> </a>
+                <!-- END RESPONSIVE MENU TOGGLER -->
+                <!-- BEGIN TOP NAVIGATION MENU -->
+                <div class="top-menu">
+                    <ul class="nav navbar-nav pull-right">
+                        <!-- BEGIN USER LOGIN DROPDOWN -->
+                        <!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
+                        <li class="dropdown dropdown-user">
+                            <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+                                <img alt="" class="img-circle" src="{% static 'assets/layouts/layout/img/avatar3_small.jpg' %}" />
+                                <span class="username username-hide-on-mobile"> USER </span>
+                                <i class="fa fa-angle-down"></i>
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-default">
+                                <li>
+                                    <a href="/profile">
+                                        <i class="icon-user"></i> My Profile </a>
+                                </li>
+                                <li class="divider"> </li>
+                                <li>
+                                    <a href="../logout/">
+                                        <i class="icon-key"></i> Log Out </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <!-- END USER LOGIN DROPDOWN -->
+                        <!-- BEGIN QUICK SIDEBAR TOGGLER -->
+                        <!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
+                        <!-- END QUICK SIDEBAR TOGGLER -->
+                    </ul>
+                </div>
+                <!-- END TOP NAVIGATION MENU -->
+            </div>
+            <!-- END HEADER INNER -->
+        </div>
+        <!-- END HEADER -->
+        <!-- BEGIN HEADER & CONTENT DIVIDER -->
+        <div class="clearfix"> </div>
+        <!-- END HEADER & CONTENT DIVIDER -->
+        <!-- BEGIN CONTAINER -->
+        <div class="page-container">
+            <!-- BEGIN SIDEBAR -->
+            <div class="page-sidebar-wrapper">
+                <!-- BEGIN SIDEBAR -->
+                <!-- DOC: Set data-auto-scroll="false" to disable the sidebar from auto scrolling/focusing -->
+                <!-- DOC: Change data-auto-speed="200" to adjust the sub menu slide up/down speed -->
+                <div class="page-sidebar navbar-collapse collapse">
+                    <!-- BEGIN SIDEBAR MENU -->
+                    <!-- DOC: Apply "page-sidebar-menu-light" class right after "page-sidebar-menu" to enable light sidebar menu style(without borders) -->
+                    <!-- DOC: Apply "page-sidebar-menu-hover-submenu" class right after "page-sidebar-menu" to enable hoverable(hover vs accordion) sub menu mode -->
+                    <!-- DOC: Apply "page-sidebar-menu-closed" class right after "page-sidebar-menu" to collapse("page-sidebar-closed" class must be applied to the body element) the sidebar sub menu mode -->
+                    <!-- DOC: Set data-auto-scroll="false" to disable the sidebar from auto scrolling/focusing -->
+                    <!-- DOC: Set data-keep-expand="true" to keep the submenues expanded -->
+                    <!-- DOC: Set data-auto-speed="200" to adjust the sub menu slide up/down speed -->
+                    <ul class="page-sidebar-menu  page-header-fixed page-sidebar-menu-closed " data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200" style="padding-top: 20px">
+                        <!-- DOC: To remove the sidebar toggler from the sidebar you just need to completely remove the below "sidebar-toggler-wrapper" LI element -->
+                        <li class="sidebar-toggler-wrapper hide">
+                            <!-- BEGIN SIDEBAR TOGGLER BUTTON -->
+                            <div class="sidebar-toggler"> </div>
+                            <!-- END SIDEBAR TOGGLER BUTTON -->
+                        </li>
+                        <li class="nav-item start   active open">
+                            <a href="javascript:;" class="nav-link">
+                                <i class="icon-home"></i>
+                                <span class="title">Dashboard</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="javascript:;" class="nav-link nav-toggle">
+                                <i class="icon-user"></i>
+                                <span class="title">Profile</span>
+                                <span class="selected"></span>
+                                <span class="arrow open"></span>
+                            </a>
+                            <ul class="sub-menu">
+                                <li class="nav-item start ">
+                                    <a href="../profile/" class="nav-link ">
+                                        <i class="icon-user"></i>
+                                        <span class="title">Overview</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item  ">
+                                    <a href="../profile/edit/" class="nav-link ">
+                                        <i class="icon-wrench"></i>
+                                        <span class="title">Account Settings</span>
+                                        <span class="selected"></span>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="../profile/help/" class="nav-link ">
+                                        <i class="icon-support"></i>
+                                        <span class="title">Help</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item start ">
+                            <a href="../diary/" class="nav-link">
+                                <i class="icon-notebook"></i>
+                                <span class="title">My Diary</span>
+                            </a>
+                        </li>
+                    </ul>
+                    <!-- END SIDEBAR MENU -->
+                </div>
+                <!-- END SIDEBAR -->
+            </div>
+            <!-- END SIDEBAR -->
+            <!-- BEGIN CONTENT -->
+            <div class="page-content-wrapper">
+                <!-- BEGIN CONTENT BODY -->
+                <div class="page-content">
+                    <!-- BEGIN PAGE HEADER-->
+                    <!-- BEGIN PAGE BAR -->
+                    <div class="page-bar">
+                        <ul class="page-breadcrumb">
+                            <li>
+                                <a href="index.html">Home</a>
+                                <i class="fa fa-circle"></i>
+                            </li>
+                            <li>
+                                <span>Dashboard</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- END PAGE BAR -->
+                    <!-- BEGIN PAGE TITLE-->
+                    <h3 class="page-title"> Dashboard
+                        <small>dashboard & statistics</small>
+                    </h3>
+                    <!-- END PAGE TITLE-->
+                    <!-- END PAGE HEADER-->
+                    <div class="row">
+                        <div class="col-md-4 col-sm-6">
+                            <div class="portlet light bordered">
+                                <div class="portlet-title">
+                                    <!-- SIDEBAR USERPIC -->
+                                    <div class="profile-userpic">
+
+                                        <img src= {% if user_profile.profile_pic %} " {{user_profile.profile_pic.url}} " {% else %} "/media/pictures/default.jpg" {% endif %} class="img-responsive" alt=""> </div>
+                                    <!-- END SIDEBAR USERPIC -->
+                                    <!-- SIDEBAR USER TITLE -->
+                                    <div class="profile-usertitle">
+                                        <div class="profile-usertitle-name"> {{user_profile.name}} </div>
+                                    </div>
+                                    <!-- END SIDEBAR USER TITLE -->
+                                </div>
+                                <div class="portlet-body text-center">
+                                    <h4 class="profile-desc-title"> Occupation </h4>
+                                    <span class="profile-desc-text">{{user_profile.occupation}} </span>
+                                    <h4 class="profile-desc-title"> Gender </h4>
+                                    <span class="profile-desc-text"> {% if user_profile.gender == "M" %} Male {% else %} Female {% endif %}</span>
+                                    <h4 class="profile-desc-title"> City </h4>
+                                    <span class="profile-desc-text">{{user_profile.city}} </span>
+                                    <h4 class="profile-desc-title">  College </h4>
+                                    <span class="profile-desc-text">{{user_profile.college}} </span>
+                                    <h4 class="profile-desc-title"> About </h4>
+                                    <span class="profile-desc-text">{{user_profile.about_me}} </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-8 col-sm-6">
+                            <div class="row">
+                                <div class="portlet light bordered">
+                                    <div class="portlet-title">
+                                        <div class="caption">
+                                            <i class="icon-cursor font-purple"></i>
+                                            <span class="caption-subject font-purple bold uppercase">General Stats</span>
+                                        </div>
+                                    </div>
+                                    <div class="portlet-body">
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <div class="easy-pie-chart">
+                                                    <div class="number transactions" data-percent="{{user_profile.anxiety_score}}">
+                                                        <span>{{user_profile.anxiety_score}}</span>% </div>
+                                                    <a class="title" href="javascript:;"> Anxeity
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="margin-bottom-10 visible-sm"> </div>
+                                            <div class="col-md-4">
+                                                <div class="easy-pie-chart">
+                                                    <div class="number visits" data-percent="{{user_profile.depression_score}}">
+                                                        <span>{{user_profile.depression_score}}</span>% </div>
+                                                    <a class="title" href="javascript:;"> Depression
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="margin-bottom-10 visible-sm"> </div>
+                                            <div class="col-md-4">
+                                                <div class="easy-pie-chart">
+                                                    <div class="number bounce" data-percent="{{user_profile.stress_score}}">
+                                                        <span>{{user_profile.stress_score}}</span>% </div>
+                                                    <a class="title" href="javascript:;"> Stress
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <!-- BEGIN PORTLET -->
+                                <div class="portlet light bordered tasks-widget">
+                                            <div class="portlet-title">
+                                                <div class="caption caption-md">
+                                                    <i class="icon-bar-chart theme-font hide"></i>
+                                                    <span class="caption-subject font-blue-madison bold uppercase">Surveys</span>
+                                                    <span class="caption-helper"></span>
+                                                </div>
+                                            </div>
+                                            <div class="portlet-body">
+                                                <div class="task-content">
+                                                    <div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 282px;"><div class="scroller" style="height: 282px; overflow: hidden; width: auto;" data-always-visible="1" data-rail-visible1="0" data-handle-color="#D7DCE2" data-initialized="1">
+                                                        <!-- START TASK LIST -->
+                                                        <ul class="task-list">
+                                                            {% for survey in user_surveys %}
+                                                            <li>
+                                                                <div class="task-title">
+                                                                    <span class="task-title-sp">{{'survey.name'}}</span>
+                                                                    <span class="label label-sm label-success">{{'survey.status'}}</span>
+                                                                </div>
+                                                            </li>
+                                                            {% endfor %}
+                                                        </ul>
+                                                        <!-- END START TASK LIST -->
+                                                    </div><div class="slimScrollBar" style="width: 7px; position: absolute; top: 0px; opacity: 0.4; display: none; border-radius: 7px; z-index: 99; right: 1px; height: 282px; background: rgb(215, 220, 226);"></div><div class="slimScrollRail" style="width: 7px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 7px; opacity: 0.2; z-index: 90; right: 1px; background: rgb(234, 234, 234);"></div></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                <!-- END PORTLET -->
+
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 col-sm-6">
+                            <!-- BEGIN PORTLET-->
+                            <div class="portlet light bordered">
+                                <div class="portlet-title ">
+                                    <div class="caption">
+                                        <i class="icon-calendar font-green-sharp"></i>
+                                        <span class="caption-subject font-green-sharp bold uppercase">Notes</span>
+                                    </div>
+                                </div>
+                                <div class="portlet-body">
+                                    <form action="#" class="form-horizontal form-bordered">
+                                        <div class="form-body">
+                                            <div class="form-group last">
+                                                <div class="col-md-12">
+                                                    <textarea class="ckeditor form-control" name="editor1" rows="6"></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-actions">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <a href="javascript:;" class="btn green">
+                                                        <i class="fa fa-check"></i> Submit</a>
+                                                    <a href="javascript:;" class="btn btn-outline grey-salsa">Cancel</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            <!-- END PORTLET-->
+                        </div>
+                        <div class="col-md-6 col-sm-6">
+                            <!-- BEGIN PORTLET-->
+                            <div class="portlet light bordered">
+                                <div class="portlet-title">
+                                    <div class="caption">
+                                        <i class="icon-bubble font-red-sunglo"></i>
+                                        <span class="caption-subject font-red-sunglo bold uppercase">Chats</span>
+                                    </div>
+                                    <div class="actions">
+                                        <div class="portlet-input input-inline">
+                                            <div class="input-icon right">
+                                                <i class="icon-magnifier"></i>
+                                                <input type="text" class="form-control input-circle" placeholder="search..."> </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="portlet-body" id="chats">
+                                    <div class="scroller" style="height: 525px;" data-always-visible="1" data-rail-visible1="1">
+                                        <ul class="chats">
+                                            <li class="out">
+                                                <img class="avatar" alt="" src="{% static 'assets/layouts/layout/img/avatar2.jpg' %}" />
+                                                <div class="message">
+                                                    <span class="arrow"> </span>
+                                                    <a href="javascript:;" class="name"> Lisa Wong </a>
+                                                    <span class="datetime"> at 20:11 </span>
+                                                    <span class="body"> Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. </span>
+                                                </div>
+                                            </li>
+                                            <li class="out">
+                                                <img class="avatar" alt="" src="{% static 'assets/layouts/layout/img/avatar2.jpg' %}" />
+                                                <div class="message">
+                                                    <span class="arrow"> </span>
+                                                    <a href="javascript:;" class="name"> Lisa Wong </a>
+                                                    <span class="datetime"> at 20:11 </span>
+                                                    <span class="body"> Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. </span>
+                                                </div>
+                                            </li>
+                                            <li class="in">
+                                                <img class="avatar" alt="" src="{% static 'assets/layouts/layout/img/avatar1.jpg' %}" />
+                                                <div class="message">
+                                                    <span class="arrow"> </span>
+                                                    <a href="javascript:;" class="name"> Bob Nilson </a>
+                                                    <span class="datetime"> at 20:30 </span>
+                                                    <span class="body"> Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. </span>
+                                                </div>
+                                            </li>
+                                            <li class="in">
+                                                <img class="avatar" alt="" src="{% static 'assets/layouts/layout/img/avatar1.jpg' %}" />
+                                                <div class="message">
+                                                    <span class="arrow"> </span>
+                                                    <a href="javascript:;" class="name"> Bob Nilson </a>
+                                                    <span class="datetime"> at 20:30 </span>
+                                                    <span class="body"> Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. </span>
+                                                </div>
+                                            </li>
+                                            <li class="out">
+                                                <img class="avatar" alt="" src="{% static 'assets/layouts/layout/img/avatar3.jpg' %}" />
+                                                <div class="message">
+                                                    <span class="arrow"> </span>
+                                                    <a href="javascript:;" class="name"> Richard Doe </a>
+                                                    <span class="datetime"> at 20:33 </span>
+                                                    <span class="body"> Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. </span>
+                                                </div>
+                                            </li>
+                                            <li class="in">
+                                                <img class="avatar" alt="" src="{% static 'assets/layouts/layout/img/avatar3.jpg' %}" />
+                                                <div class="message">
+                                                    <span class="arrow"> </span>
+                                                    <a href="javascript:;" class="name"> Richard Doe </a>
+                                                    <span class="datetime"> at 20:35 </span>
+                                                    <span class="body"> Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. </span>
+                                                </div>
+                                            </li>
+                                            <li class="out">
+                                                <img class="avatar" alt="" src="{% static 'assets/layouts/layout/img/avatar1.jpg' %}" />
+                                                <div class="message">
+                                                    <span class="arrow"> </span>
+                                                    <a href="javascript:;" class="name"> Bob Nilson </a>
+                                                    <span class="datetime"> at 20:40 </span>
+                                                    <span class="body"> Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. </span>
+                                                </div>
+                                            </li>
+                                            <li class="in">
+                                                <img class="avatar" alt="" src="{% static 'assets/layouts/layout/img/avatar3.jpg' %}" />
+                                                <div class="message">
+                                                    <span class="arrow"> </span>
+                                                    <a href="javascript:;" class="name"> Richard Doe </a>
+                                                    <span class="datetime"> at 20:40 </span>
+                                                    <span class="body"> Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. </span>
+                                                </div>
+                                            </li>
+                                            <li class="out">
+                                                <img class="avatar" alt="" src="{% static 'assets/layouts/layout/img/avatar1.jpg' %}" />
+                                                <div class="message">
+                                                    <span class="arrow"> </span>
+                                                    <a href="javascript:;" class="name"> Bob Nilson </a>
+                                                    <span class="datetime"> at 20:54 </span>
+                                                    <span class="body"> Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. sed diam nonummy nibh euismod tincidunt ut laoreet. </span>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="chat-form">
+                                        <div class="input-cont">
+                                            <input class="form-control" type="text" placeholder="Type a message here..." /> </div>
+                                        <div class="btn-cont">
+                                            <span class="arrow"> </span>
+                                            <a href="" class="btn blue icn-only">
+                                                <i class="fa fa-check icon-white"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- END PORTLET-->
+                        </div>
+                    </div>
+                </div>
+                <!-- END CONTENT BODY -->
+            </div>
+            <!-- END CONTENT -->
+        </div>
+        <!-- END CONTAINER -->
+        <!-- BEGIN FOOTER -->
+        <div class="page-footer">
+            <div class="page-footer-inner"> 2016 &copy; ManaMaali.
+            </div>
+            <div class="scroll-to-top">
+                <i class="icon-arrow-up"></i>
+            </div>
+        </div>
+        <script type="text/javascript">
+            // var tp = ;
+        </script>
+        <!-- END FOOTER -->
+        <!--[if lt IE 9]>
+<script src="{% static 'assets/global/plugins/respond.min.js"></script>
+<script src="{% static 'assets/global/plugins/excanvas.min.js"></script>
+<![endif]-->
+
+        <!-- BEGIN CORE PLUGINS -->
+        <script src="{% static 'assets/global/plugins/jquery.min.js' %}" type="text/javascript"></script>
+        <script src="{% static 'assets/global/plugins/bootstrap/js/bootstrap.min.js' %}" type="text/javascript"></script>
+        <script src="{% static 'assets/global/plugins/js.cookie.min.js' %}" type="text/javascript"></script>
+        <script src="{% static 'assets/global/plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js' %}" type="text/javascript"></script>
+        <script src="{% static 'assets/global/plugins/jquery-slimscroll/jquery.slimscroll.min.js' %}" type="text/javascript"></script>
+        <script src="{% static 'assets/global/plugins/jquery.blockui.min.js' %}" type="text/javascript"></script>
+        <script src="{% static 'assets/global/plugins/uniform/jquery.uniform.min.js' %}" type="text/javascript"></script>
+        <script src="{% static 'assets/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js' %}" type="text/javascript"></script>
+        <!-- END CORE PLUGINS -->
+        <!-- BEGIN PAGE LEVEL PLUGINS -->
+        <script src="{% static 'assets/global/plugins/ckeditor/ckeditor.js' %}" type="text/javascript"></script>
+        <script src="{% static 'assets/global/plugins/jquery-easypiechart/jquery.easypiechart.min.js' %}" type="text/javascript"></script>
+        <!-- END PAGE LEVEL PLUGINS -->
+        <!-- BEGIN THEME GLOBAL SCRIPTS -->
+        <script src="{% static 'assets/global/scripts/app.min.js' %}" type="text/javascript"></script>
+        <!-- END THEME GLOBAL SCRIPTS -->
+        <!-- BEGIN PAGE LEVEL SCRIPTS -->
+        <script src="{% static 'assets/pages/scripts/userview.js' %}" type="text/javascript"></script>
+        <!-- END PAGE LEVEL SCRIPTS -->
+        <!-- BEGIN THEME LAYOUT SCRIPTS -->
+        <script src="{% static 'assets/layouts/layout/scripts/layout.min.js' %}" type="text/javascript"></script>
+        <script src="{% static 'assets/layouts/global/scripts/quick-sidebar.min.js' %}" type="text/javascript"></script>
+        <!-- END THEME LAYOUT SCRIPTS -->
+    </body>
+
+</html>

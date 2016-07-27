@@ -1,0 +1,67 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Initial Survey</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- StyleSheets -->
+    <link href="{% static 'assets/global/plugins/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css" />
+    <link href="{% static 'assets/global/plugins/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet" type="text/css" />
+    <link href="{% static 'assets/pages/css/initial-survey.css' %}" rel="stylesheet" type="text/css" />
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="{% static 'assets/global/img/favicon.ico' %}" /> </head>
+
+</head>
+<body>
+	<!-- Navigation -->
+
+    <div class="header">
+        <img src="{% static 'assets/pages/img/logo.png' %}"  class="logo" alt="" />
+    </div>
+	<!-- Navigation End-->
+
+    <!-- Page Content -->
+    <div class="container body-box">
+        <!-- survey type start -->
+        <div class="row white-bg survey-type">
+        	<div class="col-sm-4  text-center">
+        		<button class="survey-type-btn" data-type="anxiety" data-sid="Anxiety">Anxiety</button>
+        	</div>
+        	<div class="col-sm-4  text-center">
+        		<button class="survey-type-btn" data-type="depression" data-sid="Depression">Depression</button>
+        	</div>
+        	<div class="col-sm-4  text-center">
+        		<button class="survey-type-btn" data-type="stress" data-sid="Stress">Stress</button>
+        	</div>
+        </div>
+        <!-- survey type end -->
+
+        <!-- Footer -->
+        <footer>
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <p>Copyright &copy; 2016 ManaMaali</p>
+                </div>
+            </div>
+            <!-- /.row -->
+        </footer>
+    </div>
+    <!-- /.container -->
+
+    <!-- BEGIN CORE PLUGINS -->
+    <script src="{% static 'assets/global/plugins/jquery.min.js' %}" type="text/javascript"></script>
+    <!-- Dragdealer JavaScript -->
+    <script src="{% static 'assets/global/plugins/dragdealer.min.js' %}"></script>
+    <!-- END CORE PLUGINS -->
+
+    <!-- BEGIN PAGE LEVEL SCRIPTS -->
+    <script src="{% static 'assets/pages/scripts/default-survey.js' %}" type="text/javascript"></script>
+    <!-- END PAGE LEVEL SCRIPTS -->
+</body>
+</html>
